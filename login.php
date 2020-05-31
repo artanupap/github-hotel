@@ -23,7 +23,8 @@
           <h5 class="text-center"> ระบบการจัดการ AppzStory Admin </h5>
         </div>
         <div class="card-body">
-          <form action="" method="post">
+          <form id="form_login_x" name="form_login_x" method="post" action="">
+          <!-- <form action="" method="post"> -->
             <div class="form-group">
               <label for="username">ชื่อผู้ใช้งาน</label>
               <input type="text" id="username" class="form-control" placeholder="username">
@@ -34,7 +35,7 @@
               <input type="password" id="password" class="form-control" placeholder="password">
             </div>
 
-            <button name="submit" class="btn btn-primary btn-block"> เข้าสู่ระบบ</button>
+            <button name="submit" class="btn btn-primary btn-block" type="submit" name="LoginBT" id="LoginBT"> เข้าสู่ระบบ</button>
           </form>
         </div>
       </div>
@@ -45,6 +46,25 @@
 <!-- jQuery Bootstrap 4 -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  $(function(){
+      $("#form_login_x").submit(function(){ // เมื่อมีการ submit ฟอร์ม ล็อกอิน
+          // ส่งข้อมูลไปตรวจสอบที่ไฟล์ check_login.php แบบ post ด้วย ajax
+          $.post("check_login.php",$("#form_login_x").serialize(),function(data){
+            window.location='index.php';
+  //             if(data==1){ // ตรวจสอบผลลัพธ์
+  //                 // ถ้าล็อกอินผ่าน ให้ลิ้งค์ไปที่หน้า main_page.php
+  //                 window.location='login.php';
+  //             }else{
+  //                 /// คำสั่งหรือแจ้งเตือนกรณีล็อกอินไม่ผ่าน
+  //                 $("#form_login_x")[0].reset();
+  //             }
+          });
+          return false;
+      });
+  });
+</script>
 
 </body>
 </html>
