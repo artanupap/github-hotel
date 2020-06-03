@@ -6,8 +6,8 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Admin Management | AppzStory</title>
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="../../dist/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/adminlte.min.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" >
 
 </head>
@@ -96,7 +96,7 @@
 <!-- SCRIPTS -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../../dist/js/adminlte.min.js"></script>
+<script src="../../assets/js/adminlte.min.js"></script>
 
 </body>
 </html>
