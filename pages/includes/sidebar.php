@@ -17,7 +17,7 @@
 
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link">เข้าสู่ระบบครั้งล่าสุด: 24 May 2020 01:07:45  </a>
+            <a class="nav-link">เข้าสู่ระบบครั้งล่าสุด: 1/06/2020 01:07:45  </a>
         </li>
     </ul>
 </nav>

@@ -34,7 +34,7 @@
 
         <!-- Main content -->
         <div class="content">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
@@ -53,19 +53,11 @@
                                             <label for="sub_title">หัวข้อย่อย</label>
                                             <input type="text" class="form-control" name="sub_title" id="sub_title" placeholder="หัวข้อย่อย" required>
                                         </div>
-                                        <div class="form-group col-sm-12">
+                                        <div class="form-group col-md-12">
                                             <textarea id="details" class="textarea" name="details" placeholder="Place some text here"
                                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
                                             </textarea>
                                         </div>
-                                        <!-- <div class="form-group col-sm-4">
-                                            <label for="first_name">หัวข้อ</label>
-                                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="หัวข้อ" required>
-                                        </div>
-                                        <div class="form-group col-sm-4">
-                                            <label for="first_name">หัวข้อ</label>
-                                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="หัวข้อ" required>
-                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="card-footer">
@@ -87,6 +79,7 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <script src="../../plugins/summernote/summernote-bs4.min.js"></script>
 
+
 <script>
     $(function () {
         $('#details').summernote({
@@ -97,12 +90,12 @@
                     }
                 }
             },
-            height: 350,
+            height: 500,
         });
 
         $.upload = function (file) {
-            let out = new FormData();
-            out.append('file', file, file.name);
+            let data = new FormData();
+            data.append('file', file, file.name);
 
             $.ajax({
                 method: 'POST',
@@ -110,14 +103,15 @@
                 contentType: false,
                 cache: false,
                 processData: false,
-                data: out,
-                success: function (img) {
-                    $('#details').summernote('insertImage', img);
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    console.error(textStatus + " " + errorThrown);
-                }
-            });
+                data: data
+            }) 
+            .done(function(img) {
+                $('#details').summernote('insertImage', img);
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                console.error(textStatus + " " + errorThrown);
+            })
+            
         };
     })
 </script>
