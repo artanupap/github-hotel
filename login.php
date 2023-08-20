@@ -26,12 +26,12 @@
           <form id="form_login_x" name="form_login_x" method="post" action="">
           <!-- <form action="" method="post"> -->
             <div class="form-group">
-              <label for="username">ชื่อผู้ใช้งาน</label>
+              <label for="username">username</label>
               <input type="text" id="username" class="form-control" placeholder="username">
             </div>
 
             <div class="form-group">
-              <label for="password">รหัสผ่าน</label>
+              <label for="password">password</label>
               <input type="password" id="password" class="form-control" placeholder="password">
             </div>
 
